@@ -41,7 +41,7 @@ const Main = () => {
       {inputValue && (
         <div className={styles.listContainer}>
           <h2>추천 검색어</h2>
-          <Suspense fallback={<p className={styles.noticeStatus}>로딩중</p>}>
+          <Suspense fallback={<p>로딩중</p>}>
             <RecommendKeyword setInputValue={setInputValue} />
           </Suspense>
         </div>
