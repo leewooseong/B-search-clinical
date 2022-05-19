@@ -1,5 +1,4 @@
-import styles from './RecommendKeyword.module.scss'
-import React, { MouseEvent, Suspense } from 'react'
+import { Dispatch, MouseEvent, SetStateAction } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'states'
 
@@ -10,7 +9,7 @@ import { setKeyword } from 'states/search'
 import { SearchIcon } from 'assets/svg'
 
 interface IProps {
-  setInputValue: React.Dispatch<React.SetStateAction<string>>
+  setInputValue: Dispatch<SetStateAction<string>>
 }
 
 const RecommendKeyword = ({ setInputValue }: IProps) => {
