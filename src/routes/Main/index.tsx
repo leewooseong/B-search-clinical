@@ -1,5 +1,5 @@
 import styles from './Main.module.scss'
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react'
+import { ChangeEvent, FormEvent, Suspense, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 
 import { useAppDispatch } from 'hooks/useAppDispatch'
@@ -35,7 +35,14 @@ const Main = () => {
         </div>
         <button type='submit'>검색</button>
       </form>
-      {inputValue && <RecommendKeyword test={setInputValue} />}
+      {inputValue && (
+        <div className={styles.listContainer}>
+          <h2>추천 검색어</h2>
+          <Suspense fallback={<div>로딩중</div>}>
+            <RecommendKeyword setInputValue={setInputValue} />
+          </Suspense>
+        </div>
+      )}
     </main>
   )
 }

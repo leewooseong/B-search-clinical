@@ -1,5 +1,5 @@
 import styles from './RecommendKeyword.module.scss'
-import { MouseEvent } from 'react'
+import React, { MouseEvent, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'states'
 
@@ -10,36 +10,38 @@ import { setKeyword } from 'states/search'
 import { SearchIcon } from 'assets/svg'
 
 interface IProps {
-  test: React.Dispatch<React.SetStateAction<string>>
+  setInputValue: React.Dispatch<React.SetStateAction<string>>
 }
 
-const RecommendKeyword = ({ test }: IProps) => {
+const RecommendKeyword = ({ setInputValue }: IProps) => {
   const dispatch = useAppDispatch()
   const keyword = useSelector((state: RootState) => state.search.keyword)
-  const { data, isLoading } = useKeywordQuery(keyword)
+  const { data } = useKeywordQuery(keyword)
 
   const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
-    test(e.currentTarget.value)
+    setInputValue(e.currentTarget.value)
     dispatch(setKeyword(e.currentTarget.value))
   }
 
-  //   if (isLoading) return <ul><li>검색 중...</li></ul>
-  //   if (!data || !keyword) return null
+  if (!keyword || !data) {
+    return <div>검색어를 입력중 입니다.</div>
+  }
+
+  if (data.length === 0) {
+    return <div>검색 결과가 없습니다.</div>
+  }
 
   return (
-    <div className={styles.listContainer}>
-      <h2>추천 검색어</h2>
-      <ul>
-        {data?.map((item) => (
-          <li key={item.sickCd}>
-            <SearchIcon />
-            <button type='button' value={item.sickNm} onClick={clickHandler}>
-              {item.sickNm}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {data.map((item) => (
+        <li key={item.sickCd}>
+          <SearchIcon />
+          <button type='button' value={item.sickNm} onClick={clickHandler}>
+            {item.sickNm}
+          </button>
+        </li>
+      ))}
+    </ul>
   )
 }
 

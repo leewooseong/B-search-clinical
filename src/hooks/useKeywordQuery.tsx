@@ -11,7 +11,7 @@ const useKeywordQuery = (keyword: string) => {
     staleTime: 1000 * 60 * 10,
     refetchOnWindowFocus: false,
     initialData: undefined,
-    // suspense: true,
+    suspense: true,
     onSuccess: () => dispatch(incrementCallCount(keyword)),
   })
 }
