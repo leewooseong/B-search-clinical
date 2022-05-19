@@ -1,0 +1,48 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+
+.main {
+  width: 660px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  .title {
+    padding: 150px 0 30px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .desktop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    background-color: colors.$WHITE;
+    border-radius: 42px;
+
+    .searchBox {
+      display: flex;
+      flex: 1;
+      gap: 10px;
+      align-items: center;
+      padding: 20px 24px;
+      background-color: colors.$WHITE;
+
+      input {
+        flex: 1;
+        font-size: 18px;
+      }
+    }
+
+    button {
+      padding: 18px 32px;
+      font-size: 18px;
+      font-weight: 600;
+      color: colors.$WHITE;
+      background-color: colors.$DEEP_BLUE;
+    }
+  }
+}
