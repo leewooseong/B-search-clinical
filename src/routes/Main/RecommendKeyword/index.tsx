@@ -23,11 +23,11 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
   }
 
   if (!keyword || !data) {
-    return <div>검색어를 입력중 입니다.</div>
+    return <p>검색어를 입력중 입니다.</p>
   }
 
   if (data.length === 0) {
-    return <div>검색 결과가 없습니다.</div>
+    return <p>검색 결과가 없습니다.</p>
   }
 
   return (

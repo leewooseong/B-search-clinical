@@ -1,11 +1,13 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/responsive';
+@use '/src/styles/mixins/visual';
 
 .main {
-  width: 660px;
+  max-width: 660px;
   padding: 0 20px;
   margin: 0 auto;
+  letter-spacing: -0.018em;
 
   .title {
     padding: 150px 0 30px;
@@ -15,7 +17,7 @@
     text-align: center;
   }
 
-  .desktop {
+  .formBox {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -38,9 +40,10 @@
     }
 
     button {
+      @include flexbox.flexbox;
       padding: 18px 32px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       color: colors.$WHITE;
       background-color: colors.$DEEP_BLUE;
     }
@@ -55,30 +58,66 @@
   width: 100%;
   padding: 24px 24px 16px;
   margin-top: 8px;
+  font-size: 13px;
   background-color: colors.$WHITE;
   border-radius: 20px;
 
   h2 {
-    font-size: 13px;
-    font-weight: 800;
     line-height: 1.6;
-    letter-spacing: -0.018em;
+    color: colors.$GRAY6;
   }
 
   ul {
-    margin-top: 10px;
-
     li {
       display: flex;
       gap: 10px;
       align-items: center;
+      margin-top: 10px;
 
       button {
         overflow: hidden;
+        font-size: 16px;
         line-height: 30px;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
     }
   }
+
+  p {
+    line-height: 2;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .main {
+    max-width: 500px;
+
+    .title {
+      font-size: 20px;
+    }
+
+    .formBox {
+      height: 46px;
+      box-shadow: 0 2px 2px rgba(30, 32, 37, 10%);
+
+      .searchBox {
+        input {
+          font-size: 14px;
+        }
+      }
+
+      button {
+        background-color: colors.$WHITE;
+      }
+    }
+  }
+}
+
+.mobile {
+  @include visual.desktopHidden;
+}
+
+.pc {
+  @include visual.mobileHidden;
 }
