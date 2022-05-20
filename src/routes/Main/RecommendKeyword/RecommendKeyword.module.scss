@@ -2,9 +2,11 @@
 @use '/src/styles/mixins/position';
 
 .selected {
-  padding: 0 10px;
-  background-color: colors.$GRAYE;
-  border-radius: 10px;
+  & button:focus {
+    padding: 0 10px;
+    background-color: colors.$GRAYE;
+    border-radius: 10px;
+  }
 }
 
 // .listContainer {

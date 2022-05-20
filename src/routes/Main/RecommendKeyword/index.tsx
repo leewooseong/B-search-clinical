@@ -1,12 +1,9 @@
 import styles from './RecommendKeyword.module.scss'
-import { Dispatch, MouseEvent, SetStateAction, useCallback, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useRef, useState, FocusEvent, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'states'
-import cx from 'classnames'
 
 import useKeywordQuery from 'hooks/useKeywordQuery'
-import { useAppDispatch } from 'hooks/useAppDispatch'
-import { setKeyword } from 'states/search'
 
 import { SearchIcon } from 'assets/svg'
 
@@ -15,34 +12,45 @@ interface IProps {
 }
 
 const RecommendKeyword = ({ setInputValue }: IProps) => {
-  const [keywordSelector, setKeywordSelector] = useState(0)
-
-  const dispatch = useAppDispatch()
-  const keyword = useSelector((state: RootState) => state.search.keyword)
+  const { keyword } = useSelector((state: RootState) => state.search)
   const { data } = useKeywordQuery(keyword)
 
-  const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+  const [autoFrame, setAutoFrame] = useState(-1)
+  const autoFrameRef = useRef<HTMLButtonElement[] | null[]>([])
+
+  const focusHandler = (e: FocusEvent<HTMLButtonElement>) => {
     setInputValue(e.currentTarget.value)
-    dispatch(setKeyword(e.currentTarget.value))
   }
 
-  const keyEventHandler = useCallback(
-    (e: KeyboardEvent) => {
-      const max = data ? data.length : 0
-      if (e.key === 'ArrowUp') {
-        setKeywordSelector((prev) => (prev > 0 ? prev - 1 : prev))
-      } else if (e.key === 'ArrowDown') {
-        setKeywordSelector((prev) => (prev < max - 1 ? prev + 1 : prev))
+  const keyEvent = useCallback(
+    (e: globalThis.KeyboardEvent) => {
+      if (e.isComposing === true) return
+
+      const size = autoFrameRef.current.length
+      switch (e.key) {
+        case 'ArrowUp':
+          setAutoFrame((prev) => (prev > 0 ? prev - 1 : size - 1))
+          break
+        case 'ArrowDown':
+          setAutoFrame((prev) => (prev < size - 1 ? prev + 1 : 0))
       }
     },
-    [data]
+    [autoFrameRef]
   )
 
   useEffect(() => {
-    window.addEventListener('keydown', keyEventHandler)
+    setAutoFrame(-1)
+  }, [keyword])
 
-    return () => window.removeEventListener('keydown', keyEventHandler)
-  }, [keyEventHandler])
+  useEffect(() => {
+    autoFrameRef.current[autoFrame]?.focus()
+  }, [autoFrame])
+
+  useEffect(() => {
+    window.addEventListener('keydown', keyEvent)
+
+    return () => window.removeEventListener('keydown', keyEvent)
+  }, [keyEvent])
 
   if (!keyword || !data) {
     return <div>검색어를 입력중 입니다.</div>
@@ -54,24 +62,21 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
 
   return (
     <ul>
-      {data.map((item, i) => {
-        const newItemNm = item.sickNm.replaceAll(keyword, `<mark>${keyword}<mark>`).split('<mark>')
-
-        return (
-          <li className={cx({ [styles.selected]: i === keywordSelector })} key={item.sickCd}>
-            <SearchIcon />
-            <button type='button' value={item.sickNm} onClick={clickHandler}>
-              {newItemNm.map((el) => {
-                if (el === keyword) {
-                  return <mark>{el}</mark>
-                }
-
-                return el
-              })}
-            </button>
-          </li>
-        )
-      })}
+      {data.map((item, i) => (
+        <li tabIndex={i} className={styles.selected} key={item.sickCd}>
+          <SearchIcon />
+          <button
+            onFocus={focusHandler}
+            ref={(el) => {
+              autoFrameRef.current[i] = el
+            }}
+            type='button'
+            value={item.sickNm}
+          >
+            {item.sickNm}
+          </button>
+        </li>
+      ))}
     </ul>
   )
 }

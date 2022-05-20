@@ -1,5 +1,5 @@
 import styles from './Main.module.scss'
-import { ChangeEvent, FormEvent, Suspense, useMemo, useState } from 'react'
+import { ChangeEvent, FormEvent, KeyboardEventHandler, Suspense, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 
 import { useAppDispatch } from 'hooks/useAppDispatch'
