@@ -28,17 +28,20 @@ const Main = () => {
         국내 모든 임상시험 검색하고
         <br /> 온라인으로 참여하기
       </h1>
-      <form className={styles.desktop} onSubmit={onSubmitHandler}>
+      <form className={styles.formBox} onSubmit={onSubmitHandler}>
         <div className={styles.searchBox}>
-          <SearchIcon />
+          <SearchIcon className={styles.pc} />
           <input type='text' value={inputValue} onChange={onChangeHandler} placeholder='질환명을 입력해주세요.' />
         </div>
-        <button type='submit'>검색</button>
+        <button type='submit'>
+          <span className={styles.pc}>검색</span>
+          <SearchIcon className={styles.mobile} />
+        </button>
       </form>
       {inputValue && (
         <div className={styles.listContainer}>
           <h2>추천 검색어</h2>
-          <Suspense fallback={<div>로딩중</div>}>
+          <Suspense fallback={<p>로딩중</p>}>
             <RecommendKeyword setInputValue={setInputValue} />
           </Suspense>
         </div>
