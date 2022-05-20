@@ -58,7 +58,7 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
         const newItemNm = item.sickNm.replaceAll(keyword, `<mark>${keyword}<mark>`).split('<mark>')
 
         return (
-          <li className={cx({ [styles.selector]: i === keywordSelector })} key={item.sickCd}>
+          <li className={cx({ [styles.selected]: i === keywordSelector })} key={item.sickCd}>
             <SearchIcon />
             <button type='button' value={item.sickNm} onClick={clickHandler}>
               {newItemNm.map((el) => {

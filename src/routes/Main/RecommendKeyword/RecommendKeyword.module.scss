@@ -1,7 +1,7 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/position';
 
-.selector {
+.selected {
   padding: 0 10px;
   background-color: colors.$GRAYE;
   border-radius: 10px;
