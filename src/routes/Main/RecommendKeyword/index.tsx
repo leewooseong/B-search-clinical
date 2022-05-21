@@ -6,6 +6,7 @@ import { RootState } from 'states'
 import useKeywordQuery from 'hooks/useKeywordQuery'
 
 import { SearchIcon } from 'assets/svg'
+import RecommendKeywordItem from './RecommendKeywordItem'
 
 interface IProps {
   setInputValue: Dispatch<SetStateAction<string>>
@@ -76,7 +77,7 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
             type='button'
             value={item.sickNm}
           >
-            {item.sickNm}
+            <RecommendKeywordItem keyword={keyword} sickNm={item.sickNm} />
           </button>
         </li>
       ))}
