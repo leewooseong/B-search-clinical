@@ -119,7 +119,7 @@
 
 # 🏞 기능 설명 with GIF
 
- |검색 기능|선택 기능|퍼지 문자열 검색 기능|
+ |검색 기능|방향키 선택 기능|퍼지 문자열 검색 기능|
  |:---:|:---:|:---:|
  |<img src="https://user-images.githubusercontent.com/73621658/169635351-cf24445c-ee61-4ea4-b6fb-60ba4fd6048b.gif"/>|<img src="https://user-images.githubusercontent.com/73621658/169635275-b98085ec-b69a-4223-be6a-2c26df61aa0c.gif"/>|<img src="https://user-images.githubusercontent.com/73621658/169635275-b98085ec-b69a-4223-be6a-2c26df61aa0c.gif"/>|
 
