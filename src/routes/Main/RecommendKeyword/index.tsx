@@ -33,6 +33,7 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
           setAutoFrame((prev) => (prev > 0 ? prev - 1 : size - 1))
           break
         case 'ArrowDown':
+        case 'Tab':
           e.preventDefault()
           setAutoFrame((prev) => (prev < size - 1 ? prev + 1 : 0))
       }
