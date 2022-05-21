@@ -1,0 +1,68 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+
+.gnbMobile {
+  display: none;
+
+  .gnbIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+nav {
+  ul {
+    display: flex;
+
+    li {
+      button {
+        padding: 0 16px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: colors.$GNB;
+        letter-spacing: -0.018em;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1039px) {
+  .gnbMobile {
+    display: block;
+  }
+
+  .open {
+    top: 56px !important;
+  }
+
+  nav {
+    @include position.posCenterX;
+    position: absolute;
+    top: -100%;
+    background-color: colors.$WHITE;
+
+    ul {
+      display: block;
+      width: 100vw;
+      text-align: center;
+
+      li {
+        padding: 4px 0;
+
+        button {
+          width: 100%;
+          padding: 8px 0;
+        }
+      }
+
+      li + li {
+        border-top: 1px solid colors.$GRAYD;
+      }
+    }
+  }
+}

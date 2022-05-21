@@ -1,1 +1,5 @@
 export { ReactComponent as SearchIcon } from './search_icon.svg'
+export { ReactComponent as LogoIcon } from './logo.svg'
+export { ReactComponent as GnbIcon } from './gnb.svg'
+export { ReactComponent as DecorationPcIcon } from './decoration-PC.svg'
+export { ReactComponent as DecorationMobileIcon } from './decoration-M.svg'
