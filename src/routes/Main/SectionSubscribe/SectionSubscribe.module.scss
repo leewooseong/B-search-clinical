@@ -13,7 +13,7 @@ section {
     margin: 20px auto 0;
     overflow: hidden;
 
-    h1 {
+    h2 {
       margin-bottom: 16px;
       font-size: 1.125rem;
       font-weight: 700;
@@ -21,9 +21,8 @@ section {
       color: colors.$WHITE;
       letter-spacing: -0.018em;
 
-      mark {
+      em {
         color: colors.$WHITE;
-        background: none;
       }
     }
 
@@ -60,13 +59,13 @@ section {
       border-radius: 16px;
       box-shadow: 0 2px 2px rgba(30, 32, 37, 10%);
 
-      h1 {
+      h2 {
         margin-bottom: 16px;
         font-size: 0.875rem;
         font-weight: 400;
         color: colors.$BLACK;
 
-        mark {
+        em {
           color: colors.$DEEP_BLUE;
         }
       }

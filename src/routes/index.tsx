@@ -1,13 +1,13 @@
 import styles from './Routes.module.scss'
 import { Routes, Route } from 'react-router-dom'
 
-import Main from './Main/index'
+import Layout from './Layout/index'
 
 const App = () => {
   return (
     <div className={styles.appWrapper}>
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<Layout />} />
       </Routes>
     </div>
   )

@@ -12,7 +12,7 @@ const GNB = () => {
 
   return (
     <>
-      <button type='button' className={cx(styles.gnbMobile, styles.mobile)} onClick={toggle}>
+      <button type='button' className={cx(styles.gnbMobileButton, styles.mobile)} onClick={toggle}>
         <GnbIcon />
       </button>
       <nav className={cx({ [styles.open]: isOpen })}>

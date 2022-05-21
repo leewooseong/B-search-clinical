@@ -1,7 +1,7 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/position';
 
-.gnbMobile {
+.gnbMobileButton {
   display: none;
 
   .gnbIcon {
@@ -32,7 +32,7 @@ nav {
 }
 
 @media screen and (max-width: 1039px) {
-  .gnbMobile {
+  .gnbMobileButton {
     display: block;
   }
 
