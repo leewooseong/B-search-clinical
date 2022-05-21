@@ -19,6 +19,7 @@ const searchSlice = createSlice({
     },
     incrementCallCount: (state, action) => {
       state.callCount += 1
+      // eslint-disable-next-line no-console
       console.log(`'${action.payload}'호출, callCount:${state.callCount}`)
     },
   },
