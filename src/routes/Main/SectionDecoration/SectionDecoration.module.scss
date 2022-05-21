@@ -1,0 +1,97 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/visual';
+
+section {
+  width: 100%;
+  background-color: #369efc;
+
+  .decorationWrapper {
+    position: relative;
+    max-width: 660px;
+    height: 130px;
+    padding: 24px 0 16px;
+    margin: auto;
+    overflow: hidden;
+
+    h1 {
+      margin-bottom: 16px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.6;
+      color: colors.$WHITE;
+      letter-spacing: -0.018em;
+
+      mark {
+        color: colors.$WHITE;
+        background: none;
+      }
+    }
+
+    button {
+      padding: 10px 24px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: colors.$FRENCH_BLUE;
+      letter-spacing: -0.018em;
+      background-color: colors.$WHITE;
+      border-radius: 24px;
+    }
+
+    .decorationSVG {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      width: 142px;
+      height: 115px;
+    }
+  }
+}
+
+@media screen and (max-width: 1039px) {
+  section {
+    background-color: colors.$SKY;
+
+    .decorationWrapper {
+      top: -10px;
+      max-width: 460px;
+      height: 120px;
+      padding: 12px 16px;
+      background-color: colors.$WHITE;
+      border-radius: 16px;
+      box-shadow: 0 2px 2px rgba(30, 32, 37, 10%);
+
+      h1 {
+        margin-bottom: 16px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: colors.$BLACK;
+
+        mark {
+          color: colors.$DEEP_BLUE;
+        }
+      }
+
+      button {
+        padding: 6px 16px;
+        font-size: 0.875rem;
+        color: colors.$WHITE;
+        background-color: colors.$DEEP_BLUE;
+      }
+
+      .decorationSVG {
+        right: 5px;
+        bottom: 8px;
+        width: 105px;
+        height: 101px;
+      }
+    }
+  }
+}
+
+.mobile {
+  @include visual.desktopHidden;
+}
+
+.pc {
+  @include visual.mobileHidden;
+}

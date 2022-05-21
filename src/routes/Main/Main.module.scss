@@ -1,15 +1,16 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/responsive';
 @use '/src/styles/mixins/visual';
 
 .main {
+  position: static;
   max-width: 660px;
+  min-height: calc(100vh - 120px);
   padding: 0 20px;
   margin: 0 auto;
   letter-spacing: -0.018em;
 
-  .title {
+  h1 {
     padding: 150px 0 30px;
     font-size: 40px;
     font-weight: 700;
@@ -89,11 +90,12 @@
   }
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1039px) {
   .main {
     max-width: 500px;
 
-    .title {
+    h1 {
+      padding: 80px 0 30px;
       font-size: 20px;
     }
 
@@ -110,6 +112,21 @@
       button {
         background-color: colors.$WHITE;
       }
+    }
+  }
+
+  .listContainer {
+    ul {
+      li {
+        button {
+          font-size: 14px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    p {
+      line-height: 2;
     }
   }
 }

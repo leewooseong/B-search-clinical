@@ -1,0 +1,24 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+header {
+  position: static;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  background-color: colors.$WHITE;
+
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    height: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .logoIcon {
+      height: 24px;
+    }
+  }
+}

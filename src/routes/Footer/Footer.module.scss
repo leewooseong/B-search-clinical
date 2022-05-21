@@ -1,0 +1,44 @@
+@use '/src/styles/constants/colors';
+
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  line-height: 1.15;
+  color: colors.$FOOTER_FONT;
+  background-color: colors.$FOOTER_BG;
+
+  .footerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    padding: 40px 20px;
+    margin: 0 auto;
+
+    dl {
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: -0.018em;
+
+      dt {
+        margin-bottom: 16px;
+        font-size: 1rem;
+      }
+
+      dd {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1039px) {
+    .footerWrapper {
+      display: block;
+
+      dl + dl {
+        margin-top: 40px;
+      }
+    }
+  }
+}
