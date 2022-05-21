@@ -29,9 +29,11 @@ const RecommendKeyword = ({ setInputValue }: IProps) => {
       const size = autoFrameRef.current.length
       switch (e.key) {
         case 'ArrowUp':
+          e.preventDefault()
           setAutoFrame((prev) => (prev > 0 ? prev - 1 : size - 1))
           break
         case 'ArrowDown':
+          e.preventDefault()
           setAutoFrame((prev) => (prev < size - 1 ? prev + 1 : 0))
       }
     },
