@@ -1,5 +1,6 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/visual';
+@use '/src/styles/mixins/responsive';
 
 section {
   width: 100%;
@@ -46,9 +47,9 @@ section {
   }
 }
 
-@media screen and (max-width: 1039px) {
+@include responsive.before($media:1039px) {
   section {
-    background-color: colors.$SKY;
+    background-color: colors.$SKY_BLUE;
 
     .decorationWrapper {
       top: -10px;

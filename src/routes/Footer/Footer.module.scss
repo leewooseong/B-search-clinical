@@ -1,12 +1,13 @@
 @use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
 
 footer {
   position: static;
   bottom: 0;
   width: 100%;
   line-height: 1.15;
-  color: colors.$FOOTER_FONT;
-  background-color: colors.$FOOTER_BG;
+  color: colors.$ALUMINIUM_GRAY;
+  background-color: colors.$FAUX_CHARCOAL;
 
   .footerWrapper {
     display: flex;
@@ -26,7 +27,7 @@ footer {
         font-size: 1rem;
 
         a {
-          color: colors.$FOOTER_FONT;
+          color: colors.$ALUMINIUM_GRAY;
         }
 
         p,
@@ -37,7 +38,7 @@ footer {
     }
   }
 
-  @media screen and (max-width: 1039px) {
+  @include responsive.before($media:1039px) {
     .footerWrapper {
       display: block;
 
