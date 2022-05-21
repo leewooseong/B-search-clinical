@@ -1,7 +1,8 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/responsive';
 
-.gnbMobile {
+.gnbMobileButton {
   display: none;
 
   .gnbIcon {
@@ -20,7 +21,7 @@ nav {
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.6;
-        color: colors.$GNB;
+        color: colors.$GRAY_NAVY;
         letter-spacing: -0.018em;
 
         &:hover {
@@ -31,8 +32,8 @@ nav {
   }
 }
 
-@media screen and (max-width: 1039px) {
-  .gnbMobile {
+@include responsive.before($media:1039px) {
+  .gnbMobileButton {
     display: block;
   }
 

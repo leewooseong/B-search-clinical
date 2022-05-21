@@ -1,16 +1,16 @@
-import styles from './SectionDecoration.module.scss'
+import styles from './SectionSubscribe.module.scss'
 import cx from 'classnames'
 
 import { DecorationMobileIcon, DecorationPcIcon } from 'assets/svg'
 
-const SectionDecoration = () => {
+const SectionSubscribe = () => {
   return (
     <section>
       <div className={styles.decorationWrapper}>
-        <h1>
+        <h2>
           새로운 임상시험이 등록되면 <br className={styles.mobile} />
-          <mark>문자로 알려드려요.</mark>
-        </h1>
+          <em>문자로 알려드려요.</em>
+        </h2>
         <button type='button'>임상시험 소식받기</button>
         <DecorationMobileIcon className={cx(styles.mobile, styles.decorationSVG)} />
         <DecorationPcIcon className={cx(styles.pc, styles.decorationSVG)} />
@@ -19,4 +19,4 @@ const SectionDecoration = () => {
   )
 }
 
-export default SectionDecoration
+export default SectionSubscribe

@@ -1,5 +1,5 @@
 {
-  "name": "foundation-ts",
+  "name": "b-search-clinical",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -50,7 +50,6 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/store": "^2.0.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",

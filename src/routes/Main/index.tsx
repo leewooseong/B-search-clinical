@@ -1,5 +1,3 @@
-import Header from '../Header'
-import Footer from '../Footer'
 import styles from './Main.module.scss'
 import { ChangeEvent, FormEvent, Suspense, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
@@ -9,7 +7,7 @@ import { setKeyword } from 'states/search'
 
 import { SearchIcon } from '../../assets/svg'
 import RecommendKeyword from './RecommendKeyword'
-import SectionDecoration from './SectionDecoration'
+import SectionSubscribe from './SectionSubscribe'
 
 const Main = () => {
   const [inputValue, setInputValue] = useState('')
@@ -27,7 +25,6 @@ const Main = () => {
 
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <h1>
           국내 모든 임상시험 검색하고
@@ -52,8 +49,7 @@ const Main = () => {
           </div>
         )}
       </main>
-      <SectionDecoration />
-      <Footer />
+      <SectionSubscribe />
     </>
   )
 }

@@ -1,6 +1,7 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/visual';
+@use '/src/styles/mixins/responsive';
 
 .main {
   position: static;
@@ -90,7 +91,7 @@
   }
 }
 
-@media screen and (max-width: 1039px) {
+@include responsive.before($media:1039px) {
   .main {
     max-width: 500px;
 
@@ -101,7 +102,7 @@
 
     .formBox {
       height: 46px;
-      box-shadow: 0 2px 2px rgba(30, 32, 37, 10%);
+      box-shadow: 0 2px 2px colors.$SHADOW_COLOR;
 
       .searchBox {
         input {
