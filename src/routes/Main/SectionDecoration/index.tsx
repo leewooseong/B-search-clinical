@@ -1,6 +1,7 @@
 import styles from './SectionDecoration.module.scss'
-import { DecorationMobileIcon, DecorationPcIcon } from '../../../assets/svg'
 import cx from 'classnames'
+
+import { DecorationMobileIcon, DecorationPcIcon } from 'assets/svg'
 
 const SectionDecoration = () => {
   return (
