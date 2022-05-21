@@ -3,7 +3,7 @@
 🍀 질병명칭 XML을 이용한 질병검색 사이트
 
 - **Github Repository URL** <br/> https://github.com/wanted-pre-onboarding-FE-01/B-search-clinical.git
-- **배포 URL** [![Netlify Status](https://api.netlify.com/api/v1/badges/5e1e62d4-1be5-457f-93a4-730b8dacae74/deploy-status)](https://app.netlify.com/sites/humanscape1b/deploys)  <br/> https://628878e4065a40471b600f6b--humanscape1b.netlify.app/
+- **배포 URL** <br/> [![Netlify Status](https://api.netlify.com/api/v1/badges/5e1e62d4-1be5-457f-93a4-730b8dacae74/deploy-status)](https://app.netlify.com/sites/humanscape1b/deploys)  <br/> https://628878e4065a40471b600f6b--humanscape1b.netlify.app/
 
 <br/>
 
