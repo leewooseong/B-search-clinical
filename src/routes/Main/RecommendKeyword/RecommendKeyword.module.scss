@@ -1,0 +1,8 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+
+.selected:focus-within {
+  padding: 0 10px;
+  background-color: colors.$GRAYE;
+  border-radius: 10px;
+}
