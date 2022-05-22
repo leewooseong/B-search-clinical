@@ -20,78 +20,62 @@
   }
 
   .formBox {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    overflow: hidden;
     background-color: colors.$WHITE;
     border-radius: 42px;
 
-    .searchBox {
-      display: flex;
-      flex: 1;
-      gap: 10px;
-      align-items: center;
-      padding: 20px 24px;
-      background-color: colors.$WHITE;
-
-      input {
-        flex: 1;
-        font-size: 18px;
-      }
+    .searchIcon {
+      margin-right: 10px;
+      margin-left: 24px;
     }
 
-    button {
+    input {
+      flex: 1;
+      font-size: 18px;
+    }
+
+    .searchButton {
       @include flexbox.flexbox;
       padding: 18px 32px;
       font-size: 18px;
       font-weight: 700;
       color: colors.$WHITE;
       background-color: colors.$DEEP_BLUE;
+      border-top-right-radius: 42px;
+      border-bottom-right-radius: 42px;
     }
-  }
-}
 
-.listContainer {
-  top: 100%;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 24px 24px 16px;
-  margin-top: 8px;
-  font-size: 13px;
-  background-color: colors.$WHITE;
-  border-radius: 20px;
-
-  h2 {
-    line-height: 1.6;
-    color: colors.$GRAY6;
-  }
-
-  ul {
-    li {
+    .listContainer {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 10;
       display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-top: 10px;
+      flex-direction: column;
+      width: 100%;
+      padding: 24px 24px 16px;
+      margin-top: 8px;
+      font-size: 13px;
+      background-color: colors.$WHITE;
+      border-radius: 20px;
 
-      button {
-        overflow: hidden;
-        font-size: 16px;
-        line-height: 30px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+      .listHeader {
+        line-height: 1.6;
+        color: colors.$GRAY6;
+      }
+
+      p {
+        line-height: 2;
       }
     }
   }
-
-  p {
-    line-height: 2;
-  }
 }
 
-@include responsive.before($media:1039px) {
+@include responsive.before($media: 1039px) {
   .main {
     max-width: 500px;
 
@@ -104,38 +88,31 @@
       height: 46px;
       box-shadow: 0 2px 2px colors.$SHADOW_COLOR;
 
-      .searchBox {
-        input {
-          font-size: 14px;
-        }
+      input {
+        margin-left: 24px;
+        font-size: 14px;
       }
 
-      button {
+      .searchButton {
+        height: 46px;
         background-color: colors.$WHITE;
       }
-    }
-  }
 
-  .listContainer {
-    ul {
-      li {
-        button {
-          font-size: 14px;
-          line-height: 28px;
+      .listContainer {
+        top: 45px;
+
+        p {
+          line-height: 2;
         }
       }
-    }
-
-    p {
-      line-height: 2;
     }
   }
 }
 
-.mobile {
+.forMobileScreen {
   @include visual.desktopHidden;
 }
 
-.pc {
+.forPcScreen {
   @include visual.mobileHidden;
 }

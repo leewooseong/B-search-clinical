@@ -12,8 +12,8 @@ const SectionSubscribe = () => {
           <em>문자로 알려드려요.</em>
         </h2>
         <button type='button'>임상시험 소식받기</button>
-        <DecorationMobileIcon className={cx(styles.mobile, styles.decorationSVG)} />
-        <DecorationPcIcon className={cx(styles.pc, styles.decorationSVG)} />
+        <DecorationMobileIcon className={cx(styles.forMobileScreen, styles.decorationSVG)} />
+        <DecorationPcIcon className={cx(styles.forPcScreen, styles.decorationSVG)} />
       </div>
     </section>
   )

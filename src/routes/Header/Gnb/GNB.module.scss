@@ -18,7 +18,7 @@ nav {
     li {
       button {
         padding: 0 16px;
-        font-size: 1rem;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.6;
         color: colors.$GRAY_NAVY;
@@ -32,7 +32,7 @@ nav {
   }
 }
 
-@include responsive.before($media:1039px) {
+@include responsive.before($media: 1039px) {
   .gnbMobileButton {
     display: block;
   }

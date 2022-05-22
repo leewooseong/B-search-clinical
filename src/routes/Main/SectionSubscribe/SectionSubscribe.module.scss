@@ -16,7 +16,7 @@ section {
 
     h2 {
       margin-bottom: 16px;
-      font-size: 1.125rem;
+      font-size: 18px;
       font-weight: 700;
       line-height: 1.6;
       color: colors.$WHITE;
@@ -29,7 +29,7 @@ section {
 
     button {
       padding: 10px 24px;
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 1.6;
       color: colors.$FRENCH_BLUE;
       letter-spacing: -0.018em;
@@ -47,7 +47,7 @@ section {
   }
 }
 
-@include responsive.before($media:1039px) {
+@include responsive.before($media: 1039px) {
   section {
     background-color: colors.$SKY_BLUE;
 
@@ -62,7 +62,7 @@ section {
 
       h2 {
         margin-bottom: 16px;
-        font-size: 0.875rem;
+        font-size: 14px;
         font-weight: 400;
         color: colors.$BLACK;
 
@@ -73,7 +73,7 @@ section {
 
       button {
         padding: 6px 16px;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: colors.$WHITE;
         background-color: colors.$DEEP_BLUE;
       }
@@ -88,10 +88,10 @@ section {
   }
 }
 
-.mobile {
+.forMobileScreen {
   @include visual.desktopHidden;
 }
 
-.pc {
+.forPcScreen {
   @include visual.mobileHidden;
 }
