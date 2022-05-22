@@ -38,7 +38,7 @@ footer {
     }
   }
 
-  @include responsive.before($media:1039px) {
+  @include responsive.before($media: 1039px) {
     .footerWrapper {
       display: block;
 

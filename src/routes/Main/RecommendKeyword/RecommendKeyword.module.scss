@@ -1,14 +1,36 @@
 @use '/src/styles/constants/colors';
 
 .selected {
-  button mark {
-    font-weight: 700;
-    background-color: transparent;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+
+  button {
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    & mark {
+      font-weight: 700;
+      background-color: transparent;
+    }
   }
 
   &:focus-within {
     padding: 0 10px;
     background-color: colors.$GRAYE;
     border-radius: 10px;
+  }
+}
+
+@include responsive.before($media: 1039px) {
+  .selected {
+    button {
+      font-size: 14px;
+      line-height: 28px;
+    }
   }
 }

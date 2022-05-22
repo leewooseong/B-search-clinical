@@ -32,7 +32,7 @@ nav {
   }
 }
 
-@include responsive.before($media:1039px) {
+@include responsive.before($media: 1039px) {
   .gnbMobileButton {
     display: block;
   }
