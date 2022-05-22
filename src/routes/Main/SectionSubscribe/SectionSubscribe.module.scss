@@ -13,14 +13,18 @@ section {
     padding: 24px 0 16px;
     margin: 20px auto 0;
     overflow: hidden;
+    font-weight: 700;
 
     h2 {
       margin-bottom: 16px;
       font-size: 18px;
-      font-weight: 700;
       line-height: 1.6;
       color: colors.$WHITE;
       letter-spacing: -0.018em;
+
+      p {
+        display: inline-block;
+      }
 
       em {
         color: colors.$WHITE;
@@ -31,7 +35,7 @@ section {
       padding: 10px 24px;
       font-size: 16px;
       line-height: 1.6;
-      color: colors.$FRENCH_BLUE;
+      color: colors.$DEEP_BLUE;
       letter-spacing: -0.018em;
       background-color: colors.$WHITE;
       border-radius: 24px;
@@ -63,8 +67,11 @@ section {
       h2 {
         margin-bottom: 16px;
         font-size: 14px;
-        font-weight: 400;
         color: colors.$BLACK;
+
+        p {
+          display: block;
+        }
 
         em {
           color: colors.$DEEP_BLUE;
