@@ -1,32 +1,26 @@
-import cx from 'classnames'
+import { useState, useRef } from 'react'
 import styles from './GNB.module.scss'
-import { GnbIcon } from '../../../assets/svg'
-import { useState, useEffect, useRef } from 'react'
+import cx from 'classnames'
+import { useClickAway } from 'react-use'
+
+import { GnbIcon } from 'assets/svg'
 
 const GNB = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const gnbRef = useRef<any>(null)
+  const gnbRef = useRef<HTMLButtonElement>(null)
 
   const toggle = () => {
     setIsOpen(!isOpen)
   }
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent): void {
-      if (gnbRef.current && !gnbRef.current.contains(e.target as Node)) {
-        setIsOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [gnbRef])
+  const handleCloseMenu = () => setIsOpen(false)
+
+  useClickAway(gnbRef, handleCloseMenu)
 
   return (
     <>
-      <button type='button' className={cx(styles.gnbMobileButton, styles.mobile)} onClick={toggle}>
-        <GnbIcon ref={gnbRef} />
+      <button type='button' className={cx(styles.gnbMobileButton, styles.mobile)} onClick={toggle} ref={gnbRef}>
+        <GnbIcon />
       </button>
       <nav className={cx({ [styles.open]: isOpen })}>
         <ul>
