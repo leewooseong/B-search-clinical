@@ -13,11 +13,11 @@ section {
     padding: 24px 0 16px;
     margin: 20px auto 0;
     overflow: hidden;
-    font-weight: 700;
 
     h2 {
       margin-bottom: 16px;
       font-size: 18px;
+      font-weight: 700;
       line-height: 1.6;
       color: colors.$WHITE;
       letter-spacing: -0.018em;
@@ -34,6 +34,7 @@ section {
     button {
       padding: 10px 24px;
       font-size: 16px;
+      font-weight: 700;
       line-height: 1.6;
       color: colors.$DEEP_BLUE;
       letter-spacing: -0.018em;
